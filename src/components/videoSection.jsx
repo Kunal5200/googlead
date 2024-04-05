@@ -56,7 +56,9 @@ const VideoSection = () => {
             >
               WHY GET OUR EXPERT AUDIT?
             </Typography>
-            <Box sx={{ backgroundColor: "#E7F0FE", borderRadius: "8px",p:1.4 }}>
+            <Box
+              sx={{ backgroundColor: "#E7F0FE", borderRadius: "8px", p: 1.4 }}
+            >
               <List>
                 {items.map((val, i) => (
                   <ListItem key={i}>
@@ -91,6 +93,10 @@ const VideoSection = () => {
                   //   width: "50%",
                   fontSize: 30,
                   fontWeight: 550,
+                  ":hover": {
+                    backgroundColor: "#0F9D58",
+                    color: "#fff",
+                  },
                 }}
               >
                 start my audit now

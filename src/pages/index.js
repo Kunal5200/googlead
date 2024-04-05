@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import {
   Box,
+  Button,
   Container,
   Divider,
   Grid,
@@ -19,6 +20,8 @@ import image3 from "@/images/belkin.png";
 import image4 from "@/images/unacademy.png";
 import image5 from "@/images/emami.png";
 import image6 from "@/images/graphy.png";
+import AuditCard from "@/components/auditCard";
+import info from "@/images/info.webp";
 export default function Home() {
   const trustedImages = [
     {
@@ -40,6 +43,45 @@ export default function Home() {
       img: image6.src,
     },
   ];
+
+  const audit = [
+    {
+      img: info.src,
+      title:
+        "You have a google ads account through which you are running ads for a while",
+      color: "#FCE8E5",
+    },
+    {
+      img: info.src,
+      title:
+        "You are getting clicks, impressions and conversions, so you assume your ads are on point and performing well",
+      color: "#FCE8E5",
+    },
+    {
+      img: info.src,
+      title:
+        "You are not sure whether the current google ads strategy is executed in the right way",
+      color: "transparent",
+    },
+    {
+      img: info.src,
+      title:
+        "You are stuck with okayish results and not sure how to boost the effectiveness of ads or the results",
+      color: "transparent",
+    },
+    {
+      img: info.src,
+      title:
+        "You want to check whether your ads and accounts are well set up and there are areas that needs to be improved",
+      color: "#FCE8E5",
+    },
+    {
+      img: info.src,
+      title:
+        "Your ad conversion, CTR and CPC sucks despite optimising the message and the budget",
+      color: "#FCE8E5",
+    },
+  ];
   return (
     <>
       <Head>
@@ -49,7 +91,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container sx={{ mt: 5 }}>
-        <WrapperHeading>
+        <WrapperHeading bgColor="#E7F0FE">
           {" "}
           <Stack
             sx={{ padding: "8px", textAlign: "center" }}
@@ -259,16 +301,98 @@ export default function Home() {
           </Grid>
         </Container>
       </Box>
-      <Box sx={{ mt: 3 }}>
-        <Typography textAlign={"center"} fontSize={38} fontWeight={600}>
-          How Do You Know Your Google Ads Need An Audit?
-        </Typography>
-        <WrapperHeading>
-          <Typography sx={{ fontSize: 18 }}>
-            A Google Ads Audit is for You, If You…
+      <Container>
+        <Box sx={{ mt: 3 }}>
+          <Typography textAlign={"center"} fontSize={38} fontWeight={600}>
+            How Do You Know Your Google Ads Need An Audit?
           </Typography>
-        </WrapperHeading>
-      </Box>
+          <Box sx={{ mt: 3 }}>
+            <WrapperHeading bgColor="#E7F0FE">
+              <Typography
+                sx={{ fontSize: 28, textAlign: "center", fontWeight: 550 }}
+              >
+                A Google Ads Audit is for You, If You…
+              </Typography>
+            </WrapperHeading>
+          </Box>
+          <Grid container spacing={3}>
+            {audit.map((val, i) => (
+              <Grid item lg={6} key={i} mt={3}>
+                <AuditCard
+                  border="1px solid #ff0000"
+                  img={val.img}
+                  bgColor={val.color}
+                  heading={val.title}
+                />
+              </Grid>
+            ))}
+            <Grid item lg={7} margin={"auto"}>
+              <AuditCard
+                border="1px solid #ff0000"
+                img={info.src}
+                bgColor="transparent"
+                heading="Your ad costs are going high and they don’t bring necessary website traffic"
+              />
+            </Grid>
+          </Grid>
+          <Typography
+            sx={{ mt: 3, textAlign: "center", fontSize: 28, fontWeight: 600 }}
+          >
+            If You Have{" "}
+            <Typography variant="span" color={"#1B72E8"}>
+              Not Realised These Problems
+            </Typography>{" "}
+            Yet, It’s Still Not Late.
+          </Typography>
+          <Box sx={{ mt: 2 }}>
+            <WrapperHeading border="1px solid #ff0000" bgColor="#FCE8E5">
+              <Typography fontSize={27} textAlign="center">
+                In fact, 99% of marketers are{" "}
+                <Typography variant="span" fontWeight={600}>
+                  not even aware that 50% of their ad spend is just waste{" "}
+                </Typography>{" "}
+                , because of poor management of accounts and the wrong metrics
+                they receive!
+              </Typography>
+            </WrapperHeading>
+          </Box>
+          <Box sx={{ mt: 2 }}>
+            <Grid container>
+              <Grid item lg={7} margin={"auto"}>
+                <Typography textAlign={"center"} fontSize={22} fontWeight={600}>
+                  Do You Want to Take Control of Your Account & Ads Now &{" "}
+                  <Typography color={"#34A853"} variant="span">
+                    Improve Your ROAS
+                  </Typography>{" "}
+                  for Real?
+                </Typography>
+                <Box textAlign={"center"} mt={3}>
+                  <Button
+                    sx={{
+                      backgroundColor: "#0F9D58",
+                      color: "#fff",
+                      textTransform: "uppercase",
+                      p: 1,
+                      //   width: "50%",
+                      fontSize: 25,
+                      fontWeight: 550,
+                      ":hover": {
+                        backgroundColor: "#0F9D58",
+                        color: "#fff",
+                      },
+                    }}
+                  >
+                    start my audit now
+                  </Button>
+                </Box>
+                <Typography textAlign={"center"} fontSize={18}  mt={2} fontWeight={550}>
+                  Get Our Expert Audit at a Nominal Fee of Rs.499
+                </Typography>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </Container>
     </>
   );
 }
