@@ -2,10 +2,44 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-
-const inter = Inter({ subsets: ["latin"] });
-
+import {
+  Box,
+  Container,
+  Divider,
+  Grid,
+  Stack,
+  Typography,
+} from "@mui/material";
+import WrapperHeading from "@/components/wrapperheading";
+import VideoSection from "@/components/videoSection";
+import Experience from "@/components/experience";
+import image1 from "@/images/foxconn.png";
+import image2 from "@/images/linksys.png";
+import image3 from "@/images/belkin.png";
+import image4 from "@/images/unacademy.png";
+import image5 from "@/images/emami.png";
+import image6 from "@/images/graphy.png";
 export default function Home() {
+  const trustedImages = [
+    {
+      img: image1.src,
+    },
+    {
+      img: image2.src,
+    },
+    {
+      img: image3.src,
+    },
+    {
+      img: image4.src,
+    },
+    {
+      img: image5.src,
+    },
+    {
+      img: image6.src,
+    },
+  ];
   return (
     <>
       <Head>
@@ -14,101 +48,227 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
+      <Container sx={{ mt: 5 }}>
+        <WrapperHeading>
+          {" "}
+          <Stack
+            sx={{ padding: "8px", textAlign: "center" }}
+            direction={"row"}
+            alignItems={"center"}
+            spacing={1}
+            justifyContent={"center"}
+          >
+            <Typography fontSize={25} fontWeight={600}>
+              Marketers/Business Owners - Transform Your Google Ads Spending
+              into
+            </Typography>
+            <Typography fontSize={25} fontWeight={600} color={"#1B72E8"}>
+              Real Results!
+            </Typography>
+          </Stack>
+        </WrapperHeading>
+        <Box sx={{ mt: 2 }}>
+          <Typography fontSize={40} textAlign="center" fontWeight={750}>
+            Give Us Just 30 Minutes, Discover How to Seal Your
+          </Typography>
+
+          <Typography fontSize={40} fontWeight={750} textAlign={"center"}>
+            <span style={{ color: "#ff0000", fontWeight: 750 }}>
+              {" "}
+              Google Ads Leakages
+            </span>{" "}
+            and <span style={{ color: "#1B72E8" }}>Skyrocket Your ROAS</span>
+          </Typography>
+        </Box>
+        <Box sx={{ mt: 2 }}>
+          <VideoSection />
+        </Box>
+      </Container>
+      <Box sx={{ backgroundColor: "#F1F7FF", mt: 6, pb: 6 }}>
+        <Container sx={{ pt: 6 }}>
+          <Typography sx={{ fontSize: 28, fontWeight: 700 }}>
+            Get Your Ad Account Audited by an{" "}
+            <Typography variant="span" color="#1B72E8">
+              Official Google Premier Partner{" "}
+            </Typography>
+            Who Have..
+          </Typography>
+          <Stack direction={"row"} alignItems="center" spacing={4} mt={4}>
+            <Experience bgColor={"#1063D3"}>
+              {" "}
+              <Typography color={"#fff"} fontSize={18} textAlign={"center"}>
+                Worked with
+              </Typography>
+              <Typography
+                color="#fff"
+                fontSize={45}
+                textAlign={"center"}
+                fontWeight={550}
+              >
+                500 +
+              </Typography>
+              <Typography color={"#fff"} fontSize={18} textAlign="center">
+                {" "}
+                Brands
+              </Typography>
+            </Experience>
+            <Experience bgColor={"#FFD73A"}>
+              {" "}
+              <Typography
+                color="#000"
+                fontSize={45}
+                textAlign={"center"}
+                fontWeight={550}
+              >
+                10 +
+              </Typography>
+              <Typography color={"#000"} fontSize={18} fontWeight={550}>
+                Years of Google Ads
+              </Typography>
+              <Typography
+                color={"#000"}
+                fontSize={18}
+                fontWeight={550}
+                textAlign="center"
+              >
+                {" "}
+                Expertise
+              </Typography>
+            </Experience>
+            <Experience bgColor={"#1063D3"}>
+              {" "}
+              <Typography
+                color={"#fff"}
+                fontSize={18}
+                fontWeight={550}
+                textAlign={"center"}
+              >
+                Spent Over
+              </Typography>
+              <Typography
+                color="#fff"
+                fontSize={45}
+                textAlign={"center"}
+                fontWeight={550}
+              >
+                150 +
+              </Typography>
+              <Typography
+                color={"#fff"}
+                fontSize={18}
+                fontWeight={550}
+                textAlign="center"
+              >
+                {" "}
+                Crore on Ads
+              </Typography>
+            </Experience>
+            <Experience bgColor={"#FFD73A"}>
+              <Typography
+                color={"#000"}
+                fontSize={18}
+                fontWeight={550}
+                textAlign={"center"}
+              >
+                Generated
+              </Typography>
+              <Typography
+                color="#000"
+                fontSize={45}
+                textAlign={"center"}
+                fontWeight={550}
+              >
+                500 +
+              </Typography>
+              <Typography
+                color={"#000"}
+                fontSize={18}
+                fontWeight={550}
+                textAlign="center"
+              >
+                Crore Revenue
+              </Typography>
+            </Experience>
+          </Stack>
+          <Box sx={{ mt: 7 }}>
+            <Typography
+              sx={{ textAlign: "center", fontSize: 28, fontWeight: 550 }}
             >
-              By{" "}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
+              Trusted by
+            </Typography>
+          </Box>
+          <Grid container sx={{ mt: 3 }}>
+            {trustedImages.map((val, i) => (
+              <Grid item lg={2}>
+                <img src={val.img} />
+              </Grid>
+            ))}
+          </Grid>
+          <Grid container>
+            <Grid item lg={6} margin={"auto"} marginTop={3}>
+              <Box sx={{ borderRadius: "20px", backgroundColor: "#000", p: 3 }}>
+                <Typography color="#fff" textAlign={"center"} fontSize={21}>
+                  Growth Partners showed us that we weren’t even making half of
+                  it
+                </Typography>
+                <Divider
+                  sx={{
+                    backgroundColor: "#fff",
+                    width: "50%",
+                    margin: "auto",
+                    mt: 3,
+                  }}
+                />
+                <Typography
+                  sx={{
+                    color: "#fff",
+                    fontSize: 18,
+                    textAlign: "center",
+                    mt: 3,
+                  }}
+                >
+                  " We used to be so happy about our google ads results thinking
+                  that we were making 5X ROAS. But when experts at Growth
+                  Partners showed us that we weren’t even making half of it, we
+                  literally got shocked. But thanks to the audit, we are already
+                  seeing huge progress "
+                </Typography>
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+                <Typography
+                  sx={{
+                    mt: 3,
+                    fontSize: 15,
+                    color: "#fff",
+                    fontWeight: 600,
+                    textAlign: "center",
+                  }}
+                >
+                  Nithin Raj
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: 15,
+                    color: "#fff",
+                    textAlign: "center",
+                  }}
+                >
+                  Founder, Blue Island
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+      <Box sx={{ mt: 3 }}>
+        <Typography textAlign={"center"} fontSize={38} fontWeight={600}>
+          How Do You Know Your Google Ads Need An Audit?
+        </Typography>
+        <WrapperHeading>
+          <Typography sx={{ fontSize: 18 }}>
+            A Google Ads Audit is for You, If You…
+          </Typography>
+        </WrapperHeading>
+      </Box>
     </>
   );
 }
