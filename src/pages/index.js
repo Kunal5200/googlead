@@ -95,7 +95,7 @@ export default function Home() {
           {" "}
           <Stack
             sx={{ padding: "8px", textAlign: "center" }}
-            direction={"row"}
+            direction={{ lg: "row", sm: "column" }}
             alignItems={"center"}
             spacing={1}
             justifyContent={"center"}
@@ -135,7 +135,14 @@ export default function Home() {
             </Typography>
             Who Have..
           </Typography>
-          <Stack direction={"row"} alignItems="center" spacing={4} mt={4}>
+          <Stack
+            direction={{ lg: "row", sm: "column" }}
+            alignItems="center"
+            spacing={4}
+            mt={4}
+            columnGap={2}
+            rowGap={4}
+          >
             <Experience bgColor={"#1063D3"}>
               {" "}
               <Typography color={"#fff"} fontSize={18} textAlign={"center"}>
@@ -309,7 +316,11 @@ export default function Home() {
           <Box sx={{ mt: 3 }}>
             <WrapperHeading bgColor="#E7F0FE">
               <Typography
-                sx={{ fontSize: 28, textAlign: "center", fontWeight: 550 }}
+                sx={{
+                  fontSize: { lg: 28, sm: 15 },
+                  textAlign: "center",
+                  fontWeight: 550,
+                }}
               >
                 A Google Ads Audit is for You, If You…
               </Typography>
@@ -385,12 +396,26 @@ export default function Home() {
                     start my audit now
                   </Button>
                 </Box>
-                <Typography textAlign={"center"} fontSize={18}  mt={2} fontWeight={550}>
+                <Typography
+                  textAlign={"center"}
+                  fontSize={18}
+                  mt={2}
+                  fontWeight={550}
+                >
                   Get Our Expert Audit at a Nominal Fee of Rs.499
                 </Typography>
               </Grid>
             </Grid>
           </Box>
+        </Box>
+
+        <Box sx={{ mt: 3 }}>
+          <Typography sx={{}}>
+            Let’s Help You Maximize the Effectiveness of Your Campaigns With Our
+            <Typography variant="span" color="#1B72E8">
+              Actionable Insights
+            </Typography>
+          </Typography>
         </Box>
       </Container>
     </>

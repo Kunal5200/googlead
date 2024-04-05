@@ -14,7 +14,7 @@ const AuditCard = (props) => {
       >
         <Stack direction={"row"} alignItems={"center"} spacing={2} >
           <img src={props.img} />
-          <Typography fontSize={18} fontWeight={600} px={1} py={1}  >
+          <Typography fontSize={{lg:18,sm:15}} fontWeight={600} px={1} py={1}  >
             {props.heading}
           </Typography>
         </Stack>
