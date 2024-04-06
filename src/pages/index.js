@@ -22,6 +22,15 @@ import image5 from "@/images/emami.png";
 import image6 from "@/images/graphy.png";
 import AuditCard from "@/components/auditCard";
 import info from "@/images/info.webp";
+import Faq from "@/components/accordion";
+import one from "@/images/one.png";
+import two from "@/images/two.png";
+import three from "@/images/three.png";
+import four from "@/images/four.png";
+import five from "@/images/five.png";
+import RoadMap from "@/components/roadmap";
+import Experts from "@/components/expert";
+import Footer from "@/components/footer";
 export default function Home() {
   const trustedImages = [
     {
@@ -82,6 +91,43 @@ export default function Home() {
       color: "#FCE8E5",
     },
   ];
+  const roadMap = [
+    {
+      img: one.src,
+      title: "In-Depth Performance Analysis:",
+      description:
+        "Your ad costs are going high and they don’t bring necessary website traffic",
+      color: "#E8F3EB",
+    },
+    {
+      img: two.src,
+      title: "Actionable Optimization Strategies:",
+      description:
+        "We will highlight growth opportunities you may have missed and give you recommendations tailored to your needs.",
+      color: "transparent",
+    },
+    {
+      img: three.src,
+      title: "Budget Efficiency Review:",
+      description:
+        "We’ll discover where you’re wasting ad spend and where to focus your budget to maximise your ROAS.",
+      color: "#E8F3EB",
+    },
+    {
+      img: four.src,
+      title: "Targeting and Creative Advancements:",
+      description:
+        "We will give suggestions to refine your audience targeting and ad creatives for better conversions.",
+      color: "transparent",
+    },
+    {
+      img: five.src,
+      title: "Competitor Analysis:",
+      description:
+        "We will help with how to stack up your offer against your competitors to seize the market opportunities.",
+      color: "#E8F3EB",
+    },
+  ];
   return (
     <>
       <Head>
@@ -110,11 +156,19 @@ export default function Home() {
           </Stack>
         </WrapperHeading>
         <Box sx={{ mt: 2 }}>
-          <Typography fontSize={40} textAlign="center" fontWeight={750}>
+          <Typography
+            fontSize={{ lg: 40, sm: 25, xs: 20 }}
+            textAlign="center"
+            fontWeight={750}
+          >
             Give Us Just 30 Minutes, Discover How to Seal Your
           </Typography>
 
-          <Typography fontSize={40} fontWeight={750} textAlign={"center"}>
+          <Typography
+            fontSize={{ lg: 40, sm: 25, xs: 20 }}
+            fontWeight={750}
+            textAlign={"center"}
+          >
             <span style={{ color: "#ff0000", fontWeight: 750 }}>
               {" "}
               Google Ads Leakages
@@ -122,7 +176,7 @@ export default function Home() {
             and <span style={{ color: "#1B72E8" }}>Skyrocket Your ROAS</span>
           </Typography>
         </Box>
-        <Box sx={{ mt: 2 }}>
+        <Box sx={{ mt: { lg: 2, sm: 1 } }}>
           <VideoSection />
         </Box>
       </Container>
@@ -248,7 +302,7 @@ export default function Home() {
           </Box>
           <Grid container sx={{ mt: 3 }}>
             {trustedImages.map((val, i) => (
-              <Grid item lg={2}>
+              <Grid item lg={2} sx={{ margin: "auto" }}>
                 <img src={val.img} />
               </Grid>
             ))}
@@ -357,7 +411,7 @@ export default function Home() {
           </Typography>
           <Box sx={{ mt: 2 }}>
             <WrapperHeading border="1px solid #ff0000" bgColor="#FCE8E5">
-              <Typography fontSize={27} textAlign="center">
+              <Typography fontSize={{ lg: 27, sm: 20 }} textAlign="center">
                 In fact, 99% of marketers are{" "}
                 <Typography variant="span" fontWeight={600}>
                   not even aware that 50% of their ad spend is just waste{" "}
@@ -408,16 +462,127 @@ export default function Home() {
             </Grid>
           </Box>
         </Box>
+      </Container>
+      <Box
+        sx={{
+          mt: 6,
+          backgroundColor: "#F8F9FA",
+          padding: "20px 0",
+        }}
+      >
+        <Typography
+          sx={{
+            fontSize: 35,
+            fontWeight: 600,
+            textAlign: "center",
+          }}
+        >
+          Let Our Experts Manually Check Your Account & <br /> Help You{" "}
+          <Typography variant="span" color="#1B72E8">
+            Stop Leakages{" "}
+          </Typography>
+          in Your Funnel
+        </Typography>
+        <Experts />
+      </Box>
 
-        <Box sx={{ mt: 3 }}>
-          <Typography sx={{}}>
-            Let’s Help You Maximize the Effectiveness of Your Campaigns With Our
+      <Grid container mt={4}>
+        <Grid item lg={10} margin={"auto"}>
+          <Typography
+            sx={{ fontSize: 35, fontWeight: 800, textAlign: "center" }}
+          >
+            Let’s Help You Maximize the Effectiveness of Your Campaigns With Our{" "}
             <Typography variant="span" color="#1B72E8">
               Actionable Insights
             </Typography>
           </Typography>
-        </Box>
-      </Container>
+          <Box sx={{ mt: 3 }}>
+            <WrapperHeading bgColor="#2A2A2A">
+              <Typography
+                textAlign={"center"}
+                color={"#fff"}
+                fontSize={25}
+                fontWeight={550}
+              >
+                How Will this 30-Minute Audit Help You?
+              </Typography>
+            </WrapperHeading>
+          </Box>
+          <Typography fontSize={24} fontWeight={600} mt={3}>
+            Our Comprehensive ₹499 Google Ads Audit is not just an assessment;
+            it's a{" "}
+            <Typography variant="span" color={"#1B72E8"} fontWeight={600}>
+              Roadmap to Higher Performance and Smarter Spending
+            </Typography>{" "}
+            . We dive deep into your account to provide:
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid container>
+        <Grid item lg={7} margin={"auto"}>
+          <Grid container>
+            {roadMap.map((val, i) => (
+              <Grid item lg={12} mt={3}>
+                <RoadMap
+                  title={val.title}
+                  heading={val.description}
+                  img={val.img}
+                  border="1px solid #008000"
+                  bgColor={val.color}
+                />
+              </Grid>
+            ))}
+          </Grid>
+          <Box textAlign={"center"}>
+            <Typography
+              textAlign={"center"}
+              fontSize={18}
+              mt={2}
+              fontWeight={550}
+            >
+              Get Our Expert Audit at a Nominal Fee of Rs.499
+            </Typography>
+          </Box>
+          <Box textAlign={"center"} mt={3}>
+            <Button
+              sx={{
+                backgroundColor: "#0F9D58",
+                color: "#fff",
+                textTransform: "uppercase",
+                p: 1,
+                //   width: "50%",
+                fontSize: 25,
+                fontWeight: 550,
+                ":hover": {
+                  backgroundColor: "#0F9D58",
+                  color: "#fff",
+                },
+              }}
+            >
+              start my audit now
+            </Button>
+          </Box>{" "}
+        </Grid>
+      </Grid>
+
+      <Box sx={{ mt: 3, backgroundColor: "#F8F9FA" }}>
+        <Grid container pt={3}>
+          <Grid item lg={10} margin={"auto"}>
+            <Typography
+              fontSize={{ lg: 30,xs:20 }}
+              textAlign={"center"}
+              fontWeight={600}
+              mb={3}
+            >
+              Frequently Asked Questions
+            </Typography>
+            <Faq />
+          </Grid>
+        </Grid>
+      </Box>
+      <Box sx={{ backgroundColor: "#000" }}>
+        <Footer />
+      </Box>
     </>
   );
 }

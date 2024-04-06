@@ -1,7 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
-import info from "@/images/info.webp";
-const AuditCard = (props) => {
+
+const RoadMap = (props) => {
   return (
     <div>
       <Box
@@ -9,7 +9,7 @@ const AuditCard = (props) => {
           border: props.border,
           borderRadius: "0px 20px 20px 0px",
           backgroundColor: props.bgColor,
-          height: 100,
+        //   height: 100,
           display: "flex",
           alignItems: "center",
           justifyContent: "start",
@@ -17,14 +17,11 @@ const AuditCard = (props) => {
       >
         <Stack direction={"row"} alignItems={"center"} spacing={2}>
           <img src={props.img} />
-          <Box>
-            <Typography>{props.title}</Typography>
-            <Typography
-              fontSize={{ lg: 18, sm: 15,xs:15 }}
-              fontWeight={600}
-              px={1}
-              py={1}
-            >
+          <Box p={2}>
+            <Typography fontSize={{ lg: 28, sm: 15 }} fontWeight={600}>
+              {props.title}
+            </Typography>
+            <Typography mt={1} fontSize={18} fontWeight={500} >
               {props.heading}
             </Typography>
           </Box>
@@ -34,4 +31,4 @@ const AuditCard = (props) => {
   );
 };
 
-export default AuditCard;
+export default RoadMap;
