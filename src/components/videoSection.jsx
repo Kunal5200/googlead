@@ -34,9 +34,20 @@ const VideoSection = () => {
       <Grid container spacing={5} mt={0.5}>
         <Grid item lg={6}>
           <Player
-            src="https://youtu.be/gFL6FucuCRQ?si=pCOJgGN5pPEaTIr7"
+            src="https://www.youtube.com/embed/gFL6FucuCRQ?si=v_xfMhG-ETmBys9O"
             poster={poster}
           />
+          {/* <iframe
+            width="500"
+            height="500"
+            src="https://www.youtube.com/embed/gFL6FucuCRQ?si=v_xfMhG-ETmBys9O"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            style={{ borderRadius: "8px", border: "5px solid #1b72e8" }}
+          ></iframe> */}
           <Box sx={{ mt: 2, backgroundColor: "#2E353B" }}>
             <Stack direction={"row"} alignItems={"center"} spacing={2}>
               <img src={google.src} />
@@ -56,7 +67,9 @@ const VideoSection = () => {
             >
               WHY GET OUR EXPERT AUDIT?
             </Typography>
-            <Box sx={{ backgroundColor: "#E7F0FE", borderRadius: "8px",p:1.4 }}>
+            <Box
+              sx={{ backgroundColor: "#E7F0FE", borderRadius: "8px", p: 1.4 }}
+            >
               <List>
                 {items.map((val, i) => (
                   <ListItem key={i}>
@@ -89,8 +102,13 @@ const VideoSection = () => {
                   textTransform: "uppercase",
                   p: 2,
                   //   width: "50%",
-                  fontSize: 30,
+                  fontSize: {lg:30,sm:20},
                   fontWeight: 550,
+                  ":hover": {
+                    backgroundColor: "#0F9D58",
+                    color: "#fff",
+                  },
+                  
                 }}
               >
                 start my audit now

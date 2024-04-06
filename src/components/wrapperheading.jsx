@@ -6,12 +6,13 @@ const WrapperHeading = (props) => {
     <div>
       <Box
         sx={{
-          border: "1px solid #E7F0FE",
-          backgroundColor: "#E7F0FE",
-          borderRadius: "15px",
+          border: props.border,
+          backgroundColor: props.bgColor,
+          borderRadius: "25px",
+          p: 0.5,
         }}
       >
-       {props.children}
+        {props.children}
       </Box>
     </div>
   );
